@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/styles/indexcss.css">
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <meta charset="UTF-8">
+    <title>Near Earth Object Info</title>
+</head>
+<body>
+    <div class="headdiv">
+        <h1>Current NEOs for {{currentdate}}</h1><a href="/info">What is this?</a>
+    </div>
+    <hr>
+    <div>
+        <dl>
+            {% for object in objlist %}
+                <dt><h3><a href={{object['nasa_jpl_url']}}>{{object['name']}}</a></h3></dt>
+                <dd>Estimated max diameter(m): {{object['estimated_diameter']['meters']['estimated_diameter_max']}}</dd>
+                <dd>Miss Distance(km): {{object['close_approach_data'][0]['miss_distance']['kilometers']}}</dd>
+                <dd>Potentially hazardous: {{object['is_potentially_hazardous_asteroid']}}</dd>
+            {% endfor %}
+        </dl>
+    </div>
+    <div>
+        <dl>
+            <dt><h3>Raw Results Output</h3></dt>
+            <dd>{{rawoutput}}</dd>
+        </dl>
+    </div>
+    <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="jeremyalanyung"><a class="LI-simple-link" href='https://www.linkedin.com/in/jeremyalanyung?trk=profile-badge'>Jeremy Yung</a></div>
+
+</body>
+</html>
