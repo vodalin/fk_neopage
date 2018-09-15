@@ -1,8 +1,7 @@
 from flask import *
 from datetime import datetime
-from src.modules.mod_staticdata import StaticData
-from src.modules.mod_requestor import Requestor
-
+from modules.mod_staticdata import StaticData
+from modules.mod_requestor import Requestor
 app = Flask(__name__)
 
 @app.route('/')
